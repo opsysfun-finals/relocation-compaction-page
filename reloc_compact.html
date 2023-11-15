@@ -7,6 +7,7 @@
     <title>Relocation with Compaction</title>
 </head>
 <body>
+    <script src="process_data.js"></script>
     <div class="main-container">
         <div class="inputs-container">
             <form>
@@ -19,13 +20,13 @@
 
                 <label>Enter Job Sizes</label><br>
                 <input type="text" name="jobSizesForm" values=""><br>
-                <button>Initial Allocation</button>
+                <button onclick="processData(this.form)">Initial Allocation</button>
             </form>
 
             <form>
                 <h2>Controls</h2>
                 <nav class="controls-nav">
-                    <button>Deallocate</button>
+                    <!---<button>Deallocate</button>!--->
                 </nav>
             </form>
         </div>
