@@ -70,16 +70,33 @@ button:hover {
     background-color: #191919;
 }
 
-.output {
-
-    background-color: white;
-}
-
 .controls-nav {
     display: flex;
     border: 1px solid white;
     width: 95%;
     height: 41px;
     margin: 0px 10px 0px 10px;
+}
 
+#outputTable {
+    border-collapse: collapse;
+    border: solid 1px white;
+}
+
+th, td {
+    color: white;
+}
+
+/* Style for table headers */
+th {
+    border: 1px solid white;
+    padding: 8px;
+    text-align: left;
+}
+
+/* Style for table cells */
+td {
+    border: 1px solid white;
+    padding: 8px;
+    text-align: left;
 }

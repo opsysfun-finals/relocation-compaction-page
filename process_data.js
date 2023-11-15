@@ -155,6 +155,7 @@ function processData(form) {
 
     let myMemory = new Memory(totalSize, osSize, jobList);
     saveMemoryState(myMemory);
+    myMemory.viewMemory();
     createTable(myMemory);
 }
 
@@ -185,61 +186,49 @@ function loadMemoryState() {
     return null; // Return null if no saved state found
 }
 
-
-function createTable(form) {
-    
-}
-
 /*
-function validateInput(form) {
-    var stringJobSizes = getJobSizes(form);
-    var stringPartitionSizes = getTotalSize(form);
-
-    if (stringJobSizes.length === 0 || stringPartitionSizes.length === 0) {
-        console.log("len = 0")
-        return false;
-    } else if (stringJobSizes.match(/[a-zA-Z]/g) || stringPartitionSizes.match(/[a-zA-Z]/g)) {
-        console.log("contains letters")
-        return false;
-    }
-    
-    createTable(stringJobSizes, stringPartitionSizes);
-    return true;
+function testTestP() {
+    var p = document.getElementById("testp");
+    p.textContent = "WORKING?";
 }
+*/
 
-function createTable(stringJobSizes, stringPartitionSizes) {
-    var jobSizes = stringJobSizes.split(" ");
-    var partitionSizes = stringPartitionSizes.split(" ");
-
-    // Get a reference to the table element
+function createTable(memory) {
+    console.log("Creating Table");
     var table = document.getElementById("outputTable");
 
-    // Create a table row for the headers
+    if (!table) {
+        console.error("Table element not found!");
+        return;
+    }
+
+    table.innerHTML = ''; // Clear any existing content in the table
+
     var headerRow = table.insertRow(0);
-    var headerCell1 = document.createElement("th"); // Use <th> for header cells
-    var headerCell2 = document.createElement("th"); // Use <th> for header cells
-    var headerCell3 = document.createElement("th"); // Use <th> for header cells
-    headerCell1.textContent = "Partition Index";
-    headerCell2.textContent = "Partition Size";
-    headerCell3.textContent = "Job Size";
+    var headerCell1 = document.createElement("th");
+    var headerCell2 = document.createElement("th");
+    var headerCell3 = document.createElement("th");
+
+    headerCell1.textContent = "Index";
+    headerCell2.textContent = "Name";
+    headerCell3.textContent = "Size";
+
     headerRow.appendChild(headerCell1);
     headerRow.appendChild(headerCell2);
     headerRow.appendChild(headerCell3);
 
-    // Create a row for each partition size
-    for (var i = 0; i < partitionSizes.length; i++) {
-        // Insert a new row after the header row
+    for (let i = 0; i < memory.wholeMemory.length; i++) {
+        console.log(`Job Name: ${memory.wholeMemory[i].jobName}`);
+
         var row = table.insertRow(i + 1);
 
-        // Insert two cells in each row
         var cell1 = row.insertCell(0); // First column
         var cell2 = row.insertCell(1); // Second column
         var cell3 = row.insertCell(2);
 
-        // Set the text content of the cells
-        cell1.textContent = i + 1; // Partition Index
-        cell2.textContent = partitionSizes[i]; // Partition Size
-        cell3.textContent = jobSizes[i];
+        cell1.textContent = i; // Partition Index
+        cell2.textContent = memory.wholeMemory[i].jobName; // Partition Size
+        cell3.textContent = memory.wholeMemory[i].jobSize;
     }
+    // Log information about the row being inserted
 }
-*/

@@ -20,7 +20,7 @@
 
                 <label>Enter Job Sizes</label><br>
                 <input type="text" name="jobSizesForm" values=""><br>
-                <button onclick="processData(this.form)">Initial Allocation</button>
+                <button type="button" onclick="processData(this.form)">Initial Allocation</button>
             </form>
 
             <form>
@@ -34,6 +34,7 @@
         <div class="output-container">
             <h2>Output</h2>
             <label>Chart and Table will be generated here.</label>
+            <p id="testp"></p>
             <table id="outputTable"></table>
         </div>
     </div>
