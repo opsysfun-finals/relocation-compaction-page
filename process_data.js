@@ -127,8 +127,11 @@ function deallocateJobs() {
     let myMemory = loadMemoryState();
 
     if (myMemory) {
-        // Deallocate jobs based on the provided indexes
-        myMemory.deallocate(jobIndexes);
+        // Remove index 0 from the jobIndexes array if present
+        const filteredIndexes = jobIndexes.filter(index => index !== 0);
+
+        // Deallocate jobs (excluding index 0) based on the provided indexes
+        myMemory.deallocate(filteredIndexes);
         myMemory.compaction();
         saveMemoryState(myMemory);
         createTable(myMemory);
@@ -136,6 +139,7 @@ function deallocateJobs() {
         console.error('Memory state not found!');
     }
 }
+
 
 function getTotalSize(form) {
     return form.totalMemorySizeForm.value;
