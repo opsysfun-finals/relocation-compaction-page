@@ -144,8 +144,11 @@ function processData(form) {
 
     let jobList = [];
 
-    // Place OS in beginning
+    /*
+        Place OS in beginning
+        This code is omitted as it causes the OS to be put in the memory twice
     jobList.push(new Job("OS", osSize));
+    */
 
     for (let i = 0; i < jobSize_array.length; i++) {
         jobNum = i+1;
