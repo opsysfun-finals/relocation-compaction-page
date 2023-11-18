@@ -21,6 +21,7 @@ class Memory {
         
         // Representation of the physical RAM
         this.wholeMemory = [new Job("OS", this.osSize)];
+        console.log("Memory Allocated: " + this.wholeMemory[0].jobName + "\nFree Space: " + this.availableSize)
 
         // Allocate jobs in queue to memory
         this.initialAllocation();
@@ -32,7 +33,7 @@ class Memory {
         let i = 0;
         while (i < this.queue.length) {
             // Determine if job can fit in memory
-            if (this.queue[i].jobSize < this.availableSize) {
+            if (this.queue[i].jobSize <= this.availableSize) {
                 // push to memory if it can fit
                 this.wholeMemory.push(this.queue[i]);
 
