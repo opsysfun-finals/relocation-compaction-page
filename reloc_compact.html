@@ -25,8 +25,8 @@
 
             <form id="Deallocate">
                 <h2>Deallocate</h2>
+                <label>Enter job index(es) to deallocate:</label><br>
                 <nav class="controls-nav">
-                    <label>Enter job index(es) to deallocate:</label><br>
                     <input type="text" id="deallocateInput" placeholder="Enter index(es)" /><br>
                     <button type="button" onclick="deallocateJobs()">Deallocate</button>
                 </nav>
@@ -36,8 +36,9 @@
         <div class="output-container">
             <h2>Output</h2>
             <label>Chart and Table will be generated here.</label>
-            <p id="testp"></p>
-            <table id="outputTable"></table>
+            <div class="centerOutputTable">
+                <table id="outputTable"></table>
+            </div>
         </div>
     </div>
 </body>
