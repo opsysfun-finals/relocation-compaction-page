@@ -23,10 +23,12 @@
                 <button type="button" onclick="processData(this.form)">Initial Allocation</button>
             </form>
 
-            <form>
-                <h2>Controls</h2>
+            <form id="Deallocate">
+                <h2>Deallocate</h2>
                 <nav class="controls-nav">
-                    <!---<button>Deallocate</button>!--->
+                    <label>Enter job index(es) to deallocate:</label><br>
+                    <input type="text" id="deallocateInput" placeholder="Enter index(es)" /><br>
+                    <button type="button" onclick="deallocateJobs()">Deallocate</button>
                 </nav>
             </form>
         </div>

@@ -118,6 +118,24 @@ class Memory {
     END OF MEMORY CODE
     START OF WEBPAGE ACTIONS
 */
+function deallocateJobs() {
+    // Get the input value from the input field
+    const inputField = document.getElementById('deallocateInput');
+    const jobIndexes = inputField.value.trim().split(' ').map(Number);
+
+    // Retrieve the saved memory state
+    let myMemory = loadMemoryState();
+
+    if (myMemory) {
+        // Deallocate jobs based on the provided indexes
+        myMemory.deallocate(jobIndexes);
+        myMemory.compaction();
+        saveMemoryState(myMemory);
+        createTable(myMemory);
+    } else {
+        console.error('Memory state not found!');
+    }
+}
 
 function getTotalSize(form) {
     return form.totalMemorySizeForm.value;
