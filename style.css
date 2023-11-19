@@ -1,111 +1,119 @@
-@import url('https://fonts.googleapis.com/css2?family=Lexend&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@200&family=Lexend&display=swap');
-
-*{
-    margin:0px;
-    padding:0px;
-}
-
-h2, label {
-    font-family: 'Lexend', sans-serif;
-    color: white;
-    margin: 0px 0px 0px 10px;
-}
-
-h2 {
-    font-family: 'Lexend', sans-serif;
-    font-size: 70px;
-    max-width: 799px;
-}
-
-form {
-    padding: 10px;
-    padding: 0px;
-}
-
-.main-container, .input, .output {
-    display: flex;
-}
-
-.main-container {
-    justify-content: center;
-    align-items: center;
+body, html {
     background-color: #191919;
-    height: 100vh;
-    margin: 0;
-}
-
-.inputs-container, .output-container {
-    background-color: #252525;
-}
-
-.inputs-container {
-    height: 800px;
-    width: 450px;
-    margin: 5px;
-}
-
-.output-container {
-    height: 800px;
-    width: 1000px;
-    margin: 5px;
-}
-
-input {
-    width: 95%;
-    height: 41px;
-    margin: 0px 10px 10px 10px;
-}
-
-button{
-    font-family: "Lexend", sans-serif;
-    color: white;
-    background-color: transparent;
-    width: 95%;
-    height: 45px;
-    margin: 10px 0px 0px 10px;
-}
-
-button:hover {
-    background-color: #191919;
-}
-/*
-.controls-nav {
-    display: flex;
-    border: 1px solid white;
-    width: 95%;
-    height: 41px;
-    margin: 0px 10px 0px 10px;
-}
-*/
-
-.centerOutputTable {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-#outputTable {
-    border-collapse: collapse;
-    border: solid 1px white;
+    height: 100%;
     margin: 0;
     padding: 0;
 }
 
+.nav-bar {
+    display: flex;
+    justify-content: space-between;
+    margin: .2%;
+    padding-left: 1%;
+    padding-right: 1%;
+}
+
+h2 {
+    margin-top: 0;
+}
+
+h2, .nav-bar a {
+    margin-bottom: 0;
+}
+
+.main-container {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.output-tables {
+    display: flex;
+    flex-direction: column;
+    height: 50%;
+    align-items: center;
+    justify-content: center;
+}
+
+#outputTable, #gnattChart{
+    color: white;
+    font-family: "Lexend", sans-serif;
+    border: solid 1px white;
+    border-collapse: collapse;
+    margin: 2%;
+}
+
 th, td {
+    border: 1px solid white;
+}
+
+h2, label, button, .nav-bar a {
+    font-size: 2em;
+    font-family: "Lexend", sans-serif;
     color: white;
 }
 
-/* Style for table headers */
-th {
-    border: 1px solid white;
-    padding: 8px;
-    text-align: left;
+label, input {
+    display: block;
+    margin-top: 1%;
+    margin-bottom: 1%;
 }
 
-/* Style for table cells */
-td {
-    border: 1px solid white;
-    padding: 8px;
-    text-align: left;
+button {
+    background-color: transparent;
+    cursor: pointer;
+    border: solid 1px white;
+    margin-top: 1em;
+}
+
+.nav-bar a {
+    text-decoration: none;
+}
+
+input {
+    width: 100%;
+    font-size: 1.5em;
+}
+
+.input-container, .output-container {
+    background-color: #252525;
+    padding: 1%;
+    border-radius: 2%;
+    margin: 1%;
+}
+
+.input-container {
+    flex: 1;
+}
+
+.output-container {
+    flex: 3;
+    height: 92%;
+}
+
+/* Existing styles above */
+
+@media only screen and (max-width: 767px) {
+    body {
+        flex-direction: column;
+    }
+
+    .input-container, .output-container {
+        margin: 1% 5%; /* Adjust margins for better spacing */
+    }
+}
+
+.input-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-container form label,
+.input-container form input {
+    width: 100%;
+}
+
+.input-container form button {
+    width: auto; /* Adjust button width as needed */
 }

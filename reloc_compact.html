@@ -4,25 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Relocation with Compaction</title>
+    <title>Relcation with Compaction</title>
 </head>
 <body>
     <script src="process_data.js"></script>
+    
+    <nav class="nav-bar">
+        <a href="">Home</a>
+        <h2>Relocation with Compaction</h2>
+        <a href="">Help</a>
+    </nav>
+
     <div class="main-container">
-        <div class="inputs-container">
-            <form>
-                <h2>Input</h2>
-                <label>Enter TOTAL Memory Size</label><br>
-                <input type="text" name="totalMemorySizeForm" value=""><br>
+        <div class="input-container">
+            <h2>Input</h2>
+            <form name="input-form">
+                <label>Enter TOTAL Memory Size</label>
+                <input type="text", name="totalMemorySizeForm", placeholder="eg. 55">
 
-                <label>Enter OS Size</label><br>
-                <input type="text" name="osSizeForm" value=""><br>
+                <label>Enter OS Size</label>
+                <input type="text", name="osSizeForm", placeholder="eg. 5">
+                
+                <label>Enter Job Sizes</label>
+                <input type="text", name="jobSizesForm", placeholder="eg. 5 10 15 20">
 
-                <label>Enter Job Sizes</label><br>
-                <input type="text" name="jobSizesForm" values=""><br>
                 <button type="button" onclick="processData(this.form)">Initial Allocation</button>
             </form>
-
+            <br>
             <form id="Deallocate">
                 <h2>Deallocate</h2>
                 <label>Enter job index(es) to deallocate:</label><br>
@@ -30,14 +38,14 @@
                     <input type="text" id="deallocateInput" placeholder="Enter index(es)" /><br>
                     <button type="button" onclick="deallocateJobs()">Deallocate</button>
                 </nav>
-            </form>
+            </form>            
         </div>
-    
+
         <div class="output-container">
             <h2>Output</h2>
-            <label>Chart and Table will be generated here.</label>
-            <div class="centerOutputTable">
+            <div class="output-tables">
                 <table id="outputTable"></table>
+                <table id="gnattChart"></table>
             </div>
         </div>
     </div>
